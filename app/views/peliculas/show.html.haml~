@@ -1,0 +1,20 @@
+%h2 Detalles sobre #{@pelicula.titulo}
+
+%ul#detalles
+  %li
+    Calificacion:
+    = @pelicula.calificacion
+  %li
+    Estrenada el:
+    = @pelicula.fecha_estreno.strftime("%B %d, %Y")
+
+%h3 Descripcion:
+%p#descripcion= @pelicula.descricion
+
+= link_to 'Editar', edit_pelicula_path(@pelicula)
+
+= link_to 'Regresar a la lista de peliculas', peliculas_path
+
+= button_to 'Eliminar', pelicula_path(@pelicula), :method => :delete, confirm => 'Estas seguro?'
+
+

@@ -1,0 +1,11 @@
+%h2 Nueva Película!
+=form_tag peliculas_path, :method =>:post do
+  = label :pelicula, :titulo, 'Titulo'
+  = text_field :pelicula, :titulo
+  = label :pelicula, :calificacion, 'Calificacion'
+  = select :pelicula, :calificacion, ['G', 'PG', 'PG-13', 'R', 'NC-17']
+  = label :pelicula, :fecha_estreno 'Estrenada en'
+  = date_select :pelicula, :fecha_estreno
+  %br
+  = submit_tag 'Guardar'
+
